@@ -133,6 +133,13 @@ Việc dev vẫn cần đảm bảo:
 - `coincu-noamp-mobile-cleanup-handoff-2026-05-15.vi.md`
 - `coincu-crawled-not-indexed-action-plan-2026-05-15.md`
 
+Link GitHub:
+
+- https://github.com/kailavie159/qc-/blob/main/Coincu/coincu-duplicate-route-discovery-handoff-2026-05-15.vi.md
+- https://github.com/kailavie159/qc-/blob/main/Coincu/coincu-phase2-internal-link-sources-handoff-2026-05-15.vi.md
+- https://github.com/kailavie159/qc-/blob/main/Coincu/coincu-noamp-mobile-cleanup-handoff-2026-05-15.vi.md
+- https://github.com/kailavie159/qc-/blob/main/Coincu/coincu-crawled-not-indexed-action-plan-2026-05-15.md
+
 #### File dữ liệu local
 
 - `/home/thana2/coincu/batch2_gsc_crawled_not_indexed_sample.csv`
