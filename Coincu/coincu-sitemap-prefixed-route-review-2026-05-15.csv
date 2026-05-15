@@ -1,0 +1,8 @@
+address,status_code,content_type,indexability,action,reason
+https://coincu.com/news/,200,text/html; charset=UTF-8,Indexable,review,prefixed_route_in_sitemap
+https://coincu.com/markets/,200,text/html; charset=UTF-8,Indexable,review,prefixed_route_in_sitemap
+https://coincu.com/blockchain-event/,200,text/html; charset=UTF-8,Indexable,review,prefixed_route_in_sitemap
+https://coincu.com/news/crypto/,200,text/html; charset=UTF-8,Indexable,review,prefixed_route_in_sitemap
+https://coincu.com/blockchain/,200,text/html; charset=UTF-8,Indexable,review,prefixed_route_in_sitemap
+https://coincu.com/analysis/,200,text/html; charset=UTF-8,Indexable,review,prefixed_route_in_sitemap
+https://coincu.com/news/page/2/,200,text/html; charset=UTF-8,Non-Indexable,review,prefixed_route_in_sitemap
