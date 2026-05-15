@@ -1,66 +1,66 @@
-## Coincu Checklist: Lam Gi Truoc Next.js Va Lam Gi Sau Next.js
+## Coincu Checklist: Làm Gì Trước Next.js Và Làm Gì Sau Next.js
 
-Ngay: 2026-05-15
+Ngày: 2026-05-15
 
-Muc tieu:
+Mục tiêu:
 
-- tach ro viec nao nen lam ngay tren site hien tai
-- viec nao nen doi qua Next.js roi lam sach tu dau
+- tách rõ việc nào nên làm ngay trên site hiện tại
+- việc nào nên đợi qua Next.js rồi làm sạch từ đầu
 
-### 1. Nen lam ngay tren site hien tai
+### 1. Nên làm ngay trên site hiện tại
 
-Day la nhung viec dang anh huong truc tiep toi crawl/index hien tai.
+Đây là những việc đang ảnh hưởng trực tiếp tới crawl/index hiện tại.
 
 #### Media recovery
 
-- hoan tat restore media
-- uu tien chot not cum `2022/12`
-- tiep tuc verify sample image URLs tra `200 image/*`
+- hoàn tất restore media
+- ưu tiên chốt nốt cụm `2022/12`
+- tiếp tục verify sample image URLs trả `200 image/*`
 
-Ly do:
+Lý do:
 
-- image `403` la loi nang that
-- dang gay mat image index
+- image `403` là lỗi nặng thật
+- đang gây mất image index
 
-#### Giu va theo doi batch `410` da lam
+#### Giữ và theo dõi batch `410` đã làm
 
-- giu nguyen cac batch `410` da co hieu luc
-- de Google recrawl va loai bot URL rac
+- giữ nguyên các batch `410` đã có hiệu lực
+- để Google recrawl và loại bớt URL rác
 
-Ly do:
+Lý do:
 
-- day la viec da co tac dung thuc te
-- khong nen bo giua chung
+- đây là việc đã có tác dụng thực tế
+- không nên bỏ giữa chừng
 
-#### Giu cleanup `?noamp=mobile`
+#### Giữ cleanup `?noamp=mobile`
 
-- batch da verify sach `5/5`
-- neu con source nao sinh query nay thi chan tiep
+- batch đã verify sạch `5/5`
+- nếu còn source nào sinh query này thì chặn tiếp
 
-Ly do:
+Lý do:
 
-- day la mot lop URL variant da duoc xu ly tot
+- đây là một lớp URL variant đã được xử lý tốt
 
-#### Go redirect sai intent ro rang
+#### Gỡ redirect sai intent rõ ràng
 
-- uu tien nhung redirect dang tro sai bai
-- hoac dang tro ve homepage mot cach yeu
+- ưu tiên những redirect đang trỏ sai bài
+- hoặc đang trỏ về homepage một cách yếu
 
-Ly do:
+Lý do:
 
-- day la loi huong URL xau va de lai tin hieu internal khong tot
+- đây là lỗi hướng URL xấu và để lại tín hiệu internal không tốt
 
-#### Neu site cu van con chay them mot thoi gian
+#### Nếu site cũ vẫn còn chạy thêm một thời gian
 
-- bo link `news.coincu.com` khoi cac menu quan trong
-- bo link `#`
-- bo item demo/theme leftovers obvious
+- bỏ link `news.coincu.com` khỏi các menu quan trọng
+- bỏ link `#`
+- bỏ các item demo/theme leftovers obvious
 
-### 2. Khong dang ton cong sua sau trong WordPress neu sap migrate
+### 2. Không đáng tốn công sửa sâu trong WordPress nếu sắp migrate
 
-Neu migration Next.js da gan, nhung viec sau nen chot rule ngay bay gio, nhung trien khai sach trong Next.js thi hop ly hon:
+Nếu migration Next.js đã gần, những việc sau nên chốt rule ngay bây giờ, nhưng triển khai sạch trong Next.js thì hợp lý hơn:
 
-- rebuild toan bo:
+- rebuild toàn bộ:
   - `Main Navigation`
   - `Mobile Navigation`
   - `Top Bar Navigation`
@@ -68,23 +68,23 @@ Neu migration Next.js da gan, nhung viec sau nen chot rule ngay bay gio, nhung t
   - `Footer Links`
 - cleanup duplicate structure trong menu
 - cleanup section blocks / related posts / homepage modules
-- cleanup internal-link sources toan site
-- chot route architecture cho bai viet
-- chan han duplicate route discovery tu cac route phu
+- cleanup internal-link sources toàn site
+- chốt route architecture cho bài viết
+- chặn hẳn duplicate route discovery từ các route phụ
 
-### 3. Can chot decision ngay truoc khi migrate
+### 3. Cần chốt decision ngay trước khi migrate
 
-Day la cac quyet dinh can khoa som de dev build dung trong Next.js.
+Đây là các quyết định cần khóa sớm để dev build đúng trong Next.js.
 
 #### Canonical post URL
 
-- chi dung `/{post-name}/`
+- chỉ dùng `/{post-name}/`
 
-#### Route phu neu con ton tai
+#### Route phụ nếu còn tồn tại
 
-- luon `301` ve `/{slug}/`
+- luôn `301` về `/{slug}/`
 
-#### Khong mang sang Next.js
+#### Không mang sang Next.js
 
 - link `news.coincu.com`
 - query `?noamp=mobile`
@@ -94,49 +94,49 @@ Day la cac quyet dinh can khoa som de dev build dung trong Next.js.
 
 #### Sitemap rules
 
-- chi xuat canonical URLs
-- khong dua login/query/legacy/redirecting URLs vao sitemap
+- chỉ xuất canonical URLs
+- không đưa login/query/legacy/redirecting URLs vào sitemap
 
 #### Internal-link rules
 
-- moi article card
+- mọi article card
 - related post
 - section block
 - menu item
 
-deu phai link ve `/{slug}/`
+đều phải link về `/{slug}/`
 
-### 4. Nen lam sau khi qua Next.js
+### 4. Nên làm sau khi qua Next.js
 
-Day la luc lam sach that su trong codebase moi:
+Đây là lúc làm sạch thật sự trong codebase mới:
 
-- build lai navigation tu dau
-- build lai homepage blocks / section templates / related posts
+- build lại navigation từ đầu
+- build lại homepage blocks / section templates / related posts
 - code redirect rules trong app/server
-- code sitemap sach
-- code canonical sach
-- code bo query variants
-- code image delivery / legacy image redirects neu can
-- audit lai toan site sau launch
+- code sitemap sạch
+- code canonical sạch
+- code bỏ query variants
+- code image delivery / legacy image redirects nếu cần
+- audit lại toàn site sau launch
 
-### 5. Sau khi launch Next.js phai recheck ngay
+### 5. Sau khi launch Next.js phải recheck ngay
 
-- crawl toan site
+- crawl toàn site
 - sample duplicate routes
 - sample old redirects
 - sitemap output
 - image URLs
 - menus / homepage / related posts
-- GSC coverage va image indexing
+- GSC coverage và image indexing
 
-### 6. Ket luan ngan
+### 6. Kết luận ngắn
 
-Neu migration Next.js da gan:
+Nếu migration Next.js đã gần:
 
-- sua cai dang chay tren site cu
-- khong ton cong dai tu menu/template sau trong WordPress
-- mang phan cleanup lon sang Next.js
+- sửa cái đang cháy trên site cũ
+- không tốn công đại tu menu/template sâu trong WordPress
+- mang phần cleanup lớn sang Next.js
 
-Neu migration con xa:
+Nếu migration còn xa:
 
-- ngoai media + `410` + `?noamp=mobile`, co the don them menu live
+- ngoài media + `410` + `?noamp=mobile`, có thể dọn thêm menu live
