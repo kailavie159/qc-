@@ -1,85 +1,67 @@
 ## Coincu Note: Mobile Navigation Cleanup
 
-Ngày: 2026-05-15
+Ngày: 2026-05-15  
+Cập nhật brief triển khai: 2026-05-26
 
 ### Kết luận
 
-Menu `Mobile Navigation` hiện fail nặng và không nên sửa thủ công từng item.
+Menu `Mobile Navigation` hiện tại không nên sửa tay từng item nữa.
 
-Nên xem đây là một menu bị duplicate cấu trúc và nên rebuild từ đầu.
+Nên rebuild lại từ đầu, xóa toàn bộ duplicate, và chỉ giữ đúng một cấu trúc menu mobile gọn như dưới đây.
 
-### Những vấn đề thấy trực tiếp
+### Vấn đề hiện tại
 
-- menu có số lượng item rất lớn: `154`
-- item `Coincu` bị lặp hàng loạt
-- `News` bị lặp rất nhiều lần
-- `Markets`, `Knowledge`, `Reviews`, `Recommended`, `PR` cũng bị lặp theo cụm
-- submenu như:
-  - `Bitcoin`
-  - `Blockchain`
-  - `Metaverse News`
-  - `NFTs News`
-  bị lặp lặp lại rất nhiều lần
+- menu đang có quá nhiều item trùng
+- các cụm `Coincu`, `News`, `Markets`, `Knowledge`, `Reviews`, `Recommended`, `PR` bị lặp
+- nhiều submenu cũ bị nhân bản
+- vẫn có legacy link kiểu `news.coincu.com/...`
+- nếu menu này đang active, nó tạo internal-link noise trên toàn site
 
-Ngoài ra:
+### Cách xử lý đề xuất cho dev
 
-- `Recommended` vẫn chứa link `news.coincu.com/...`
-- nhiều item cũ/rác đang bị nhân lên trên toàn menu
+1. Không cleanup thủ công menu cũ `154` item
+2. Tạo lại `Mobile Navigation` từ đầu
+3. Mỗi item chỉ giữ đúng `1` bản
+4. Nếu item đúng tên nhưng đang trỏ sai URL thì sửa URL, không cần tạo thêm item mới
+5. Xóa toàn bộ item duplicate, legacy, hoặc ngoài cấu trúc chuẩn bên dưới
 
-### Đánh giá
+### Cấu trúc menu mobile chuẩn cần giữ
 
-Đây không còn là lỗi item lẻ.
+- `Coincu / Home` → `https://coincu.com/`
+- `News` → `https://coincu.com/news/`
+- `Markets` → `https://coincu.com/markets/`
+- `Knowledge` → `https://coincu.com/knowledge/`
+- `Reviews` → `https://coincu.com/crypto-reviews/`
+- `Recommended` → `https://coincu.com/recommended/`
+- `PR` → `https://coincu.com/pr/sponsored-articles-pr/`
 
-Đây là dấu hiệu của:
+### Submenu duy nhất cần giữ dưới `Recommended`
 
-- duplicated menu structure
-- menu corruption / copied blocks
-- internal-link noise sitewide nếu menu này đang active
+- `https://coincu.com/best-presale-cryptocurrencies/`
+- `https://coincu.com/best-web3-cryptocurrencies/`
+- `https://coincu.com/best-tether-casino-sites-with-usdt-bonuses/`
+- `https://coincu.com/top-cryptocurrency-projects-2026/`
+- `https://coincu.com/top-bitcoin-gambling-sites/`
+- `https://coincu.com/top-bitcoin-casinos-sites/`
+- `https://coincu.com/best-bitcoin-blackjack-casinos/`
+- `https://coincu.com/top-5-best-p2p-crypto-exchanges/`
 
-### Tác động SEO
+### Phải xóa khỏi menu mobile mới
 
-Nếu menu mobile này đang được render trên live site, nó có thể:
+- toàn bộ item duplicate
+- toàn bộ link `news.coincu.com/...`
+- toàn bộ category/subcategory cũ ngoài danh sách chuẩn ở trên
+- các item cũ/rác bị nhân lên nhiều lần
 
-- feed thêm rất nhiều internal links lặp
-- feed thêm legacy URLs
-- làm bẩn internal link graph
-- làm nặng thêm vấn đề discovery/crawl noise
+### Ghi chú xác minh URL
 
-### Khuyến nghị
+Đã check live ngày `2026-05-26`:
 
-1. Không cleanup thủ công từng item
-
-2. Bỏ dùng menu `Mobile Navigation` hiện tại
-
-3. Dựng lại menu mobile mới từ đầu, thật gọn
-
-### Cấu trúc menu mobile mới nên giữ
-
-- Coincu / Home
-- News
-- Markets
-- Knowledge
-- Reviews
-- Recommended (chỉ nếu đã dọn sạch link)
-- PR
-
-### Tuyệt đối không đưa sang menu mới
-
-- link `news.coincu.com/...`
-- item bị duplicate
-- cụm link review/gambling cũ nếu chưa được review
-- URL đang redirect nhiều tầng
-
-### Khuyến nghị kỹ thuật thêm
-
-Nếu theme hỗ trợ, nên:
-
-- sync mobile menu từ phiên bản `Main Navigation` đã cleanup
-
-để tránh maintain hai menu tách rời và tránh duplicate lỗi lần nữa.
+- tất cả URL trong brief này đang trả về `200`
+- không có URL nào trong danh sách chuẩn bị redirect sang đích khác
 
 ### Kết luận ngắn
 
-`Mobile Navigation` hiện tại nên được rebuild từ đầu.
+`Mobile Navigation` nên rebuild từ đầu theo đúng danh sách URL chuẩn ở trên.
 
-Không nên cố sửa tay từng item.
+Không nên tiếp tục sửa tay menu cũ.
