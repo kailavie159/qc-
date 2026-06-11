@@ -53,3 +53,16 @@ Action:
 - Homepage redirects are weak for malformed or unrelated URLs.
 - For junk paths with no good match, `410` is cleaner than a weak `301`.
 - The two `/vi/currencies/qbit-project-quantum/` entries should not both stay live. Review that slug carefully in Rank Math because there may be duplicate or overlapping rules.
+
+### Backlog
+
+- `/314166-maximal-extractable-value-mev-battle-heats-up/`
+  Current live status:
+  - still `301`
+  - destination: `/bnb-chain-plans-to-tackle-mev-issues-after-vote/`
+  Reason kept in backlog:
+  - the bad redirect could not be removed cleanly in the current UI pass
+  - this is a single leftover rule and not a top-priority blocker compared with media recovery
+  Next action later:
+  - revisit when there is a full redirect export or easier admin access
+  - if no true MEV replacement exists, convert this URL to `410`

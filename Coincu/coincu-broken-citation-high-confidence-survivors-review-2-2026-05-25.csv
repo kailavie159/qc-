@@ -1,0 +1,3 @@
+batch,post_id,post_name,url,old_public_status,old_api_status,old_api_result,old_api_note,recheck_status,recheck_verdict
+batch-4-non-wire-delete-ready-199-results-2026-05-23.csv,334029,how-to-claim-zora-token-airdrop,https://coincu.com/how-to-claim-zora-token-airdrop/,200,200,deleted,,200,still_live_or_needs_purge
+batch-7-non-wire-delete-ready-199-results-2026-05-24.csv,195818,how-to-do-mobile-crypto-mining,https://coincu.com/how-to-do-mobile-crypto-mining/,200,200,deleted,,200,still_live_or_needs_purge
