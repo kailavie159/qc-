@@ -1,0 +1,6 @@
+cluster,sample_urls,urls_with_backlinks,urls_with_refdomains,sum_backlinks,sum_refdomains
+convert,104,0,0,0,0
+subdomain_news,21,5,5,17,7
+numeric_slug,86,21,21,262,61
+parameter_urls,32,1,1,1,1
+duplicate_slug_hosts,40,4,4,16,6

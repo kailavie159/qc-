@@ -1,0 +1,62 @@
+# Coincu Crawled Not Indexed Sample Cluster Summary
+
+- source sample size: `1000`
+- convert-fiat-to-fiat: `104`
+- news.coincu.com: `21`
+- numeric slug: `86`
+- parameter URLs: `32`
+- duplicate slug across hosts: `40`
+
+Top first segments in sample:
+- `convert-fiat-to-fiat`: `104`
+- `news`: `90`
+- `markets`: `22`
+- `knowledge`: `13`
+- `top-crypto-coins`: `12`
+- `pr`: `11`
+- `/`: `7`
+- `press-release`: `7`
+- `uncategorized`: `7`
+- `analysis`: `6`
+- `top-projects`: `6`
+- `other-reviews`: `5`
+- `214504-opensea-introduces-on-chain-redeemable-nfts`: `4`
+- `opensea-introduces-on-chain-redeemable-nfts`: `4`
+- `ethereum`: `4`
+- `bitcoin`: `4`
+- `blockchain`: `4`
+- `nfts-news`: `3`
+- `exchange-reviews`: `3`
+- `gamefi`: `3`
+
+Examples:
+- `convert`
+  - `https://coincu.com/convert-fiat-to-fiat/55.17-eur-to-gbp`
+  - `https://coincu.com/convert-fiat-to-fiat/80.61-gbp-to-usd`
+  - `https://coincu.com/convert-fiat-to-fiat/17.58-gbp-to-usd`
+  - `https://coincu.com/convert-fiat-to-fiat/6.63-eur-to-usd`
+  - `https://coincu.com/convert-fiat-to-fiat/58.33-eur-to-usd`
+- `subdomain-news`
+  - `https://news.coincu.com/182306-warren-davidson-bill-to-remove-gary-gensler/`
+  - `https://news.coincu.com/174183-binance-launches-space-id-id-token-sale/`
+  - `https://news.coincu.com/125137-aptos-guide-claim-testnet-nft/`
+  - `https://news.coincu.com/158423-pionex-withdrew-all-of-huobi-funds/`
+  - `https://news.coincu.com/163193-polygon-matic-end-january-gain-50-4-million/`
+- `numeric-slug`
+  - `https://coincu.com/182306-warren-davidson-bill-to-remove-gary-gensler/`
+  - `https://news.coincu.com/182306-warren-davidson-bill-to-remove-gary-gensler/`
+  - `https://coincu.com/174183-binance-launches-space-id-id-token-sale/`
+  - `https://news.coincu.com/174183-binance-launches-space-id-id-token-sale/`
+  - `https://coincu.com/214504-opensea-introduces-on-chain-redeemable-nfts/?ref=blog.kayros.ai`
+- `parameter`
+  - `https://coincu.com/214504-opensea-introduces-on-chain-redeemable-nfts/?ref=blog.kayros.ai`
+  - `https://coincu.com/opensea-introduces-on-chain-redeemable-nfts/?ref=blog.kayros.ai`
+  - `https://coincu.com/214504-opensea-introduces-on-chain-redeemable-nfts/?ref=blog.kayros.games`
+  - `https://coincu.com/opensea-introduces-on-chain-redeemable-nfts/?ref=blog.kayros.games`
+  - `https://coincu.com/?p=303526`
+- `duplicate-slug`
+  - `https://coincu.com/182306-warren-davidson-bill-to-remove-gary-gensler/`
+  - `https://news.coincu.com/182306-warren-davidson-bill-to-remove-gary-gensler/`
+  - `https://coincu.com/174183-binance-launches-space-id-id-token-sale/`
+  - `https://news.coincu.com/174183-binance-launches-space-id-id-token-sale/`
+  - `https://coincu.com/125137-aptos-guide-claim-testnet-nft/`
